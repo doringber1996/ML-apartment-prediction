@@ -1,0 +1,77 @@
+﻿<html>
+  <head>
+    <title>Madlan Property Value</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+    <style>
+      label {
+        display: block;
+      }
+      body {
+        font-family: 'Heebo Light', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <h1>Property Value</h1>
+      <h2>Enter the property data:</h2>
+      <form id="measurement-form" action="{{ url_for('predict') }}" method="post">
+        <label for="City">City:</label>
+      <select id="City" name="City">
+  <option value="פתח תקווה">פתח תקווה</option>
+  <option value="נתניה">נתניה</option>
+  <option value="באר שבע">באר שבע</option>
+  <option value="הרצליה">הרצליה</option>
+  <option value="אריאל">אריאל</option>
+  <option value="דימונה">דימונה</option>
+  <option value="רחובות">רחובות</option>
+  <option value="גבעת שמואל">גבעת שמואל</option>
+  <option value="ירושלים">ירושלים</option>
+  <option value="שוהם">שוהם</option>
+  <option value="כפר סבא">כפר סבא</option>
+  <option value="רעננה">רעננה</option>
+  <option value="נהריה">נהריה</option>
+  <option value="זכרון יעקב">זכרון יעקב</option>
+  <option value="קרית ביאליק">קרית ביאליק</option>
+  <option value="חיפה">חיפה</option>
+  <option value="הוד השרון">הוד השרון</option>
+  <option value="תל אביב">תל אביב</option>
+  <option value="ראשון לציון">ראשון לציון</option>
+  <option value="יהוד מונוסון">יהוד מונוסון</option>
+  <option value="נס ציונה">נס ציונה</option>
+  <option value="אילת">אילת</option>
+  <option value="חולון">חולון</option>
+  <option value="מודיעין מכבים רעות">מודיעין מכבים רעות</option>
+  <option value="צפת">צפת</option>
+  <option value="בת ים">בת ים</option>
+  <option value="רמת גן">רמת גן</option>
+  <option value="נוף הגליל">נוף הגליל</option>
+  <option value="בית שאן">בית שאן</option>
+</select>
+        <label for="Property Type">Property Type:</label>
+       <select id="type" name="type">
+  <option value="דירה">דירה</option>
+  <option value="דירת גן">דירת גן</option>
+  <option value="דו משפחתי">דו משפחתי</option>
+  <option value="בית פרטי">בית פרטי</option>
+  <option value="פנטהאוז">פנטהאוז</option>
+  <option value="דופלקס">דופלקס</option>
+  <option value="קוטג'">קוטג'</option>
+  <option value="דירת גג">דירת גג</option>
+</select>
+
+<label for="room_number">Number of Rooms (please enter number):</label>
+<input type="number" id="room_number" name="room_number"><br><br>
+
+<label for="Area">Property Area (please enter number):</label>
+<input type="number" id="Area" name="Area"><br><br>
+        
+        <button type="submit" class="btn btn-primary px-5">Calculate Cost</button>
+      </form>
+      <h3>{{ prediction_text }}</h3>
+    </div>
+  </body>
+</html>
